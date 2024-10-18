@@ -48,13 +48,13 @@ Here is the architecture of the data platform
 - IBM Cognos Analytics: Business Intelligence Dashbording tool
 - Bash
 - Cron
-- PgModeler
+- PgAdmin
 
 ## Key Tasks
 
 Here are key tasks with a short description. For more details informations and the codes to perform each of them, refers to the links bellow corrsponding to each task.
 
-### [Task 1](./tasks/task1.md): Set up a transactional database:
+### [Task 1](./tasks/task1.md): Set up the transactional database:
 - Design the OLTP database
 - Populate the OLTP database with the provided data
 - Create an index to accelerate data retrieval
@@ -70,11 +70,11 @@ Here is the schema of the `sales_data` table in the `sales` database
 | quantity     | The quantity of products sold            |
 | timestamp    | The timestamp of the transaction         |
 
-### Task 2: Build the data warehouse:
+### [Task 2](./tasks/task2.md): Build the data warehouse:
 - Design a schema for the data warehouse
-- Create the schama and load the data into fact and dimension tables
-- Automate the daily incremental data insertion into th data warehouse
-- Create CUBES and ROLLUPS to make the reporting easier
+- Create the schema and load the data into fact and dimension tables
+- Automate the daily incremental data insertion into the data warehouse
+- Create CUBES and ROLLUP to make the reporting easier
 
 ### Task 3
 - Create a BI dashboard:
