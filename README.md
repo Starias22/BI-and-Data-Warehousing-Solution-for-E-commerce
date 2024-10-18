@@ -76,6 +76,9 @@ Here is the schema of the `sales_data` table in the `sales` database
 - Automate the daily incremental data insertion into the data warehouse
 - Create CUBES and ROLLUP to make the reporting easier
 
+Here is the design of the data warehouse
+![Data Warehouse Design](./resources/softcartRelationships.png)
+
 ### Task 3
 - Create a BI dashboard:
 - Create a barchart of quarterly sales of cell phones 
