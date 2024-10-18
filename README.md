@@ -40,34 +40,52 @@ Here is the architecture of the data platform
 
 ![alt text](./resources/architecure.png)
 
-## Key Tasks
-
-These are the key tasks:
-   - Set up a transactional database:
-      - Design the OLTP database
-      - Populate the OLTP database with the provided data
-      - Load the daily incremental data intot the data warehouse
-   - Build the data warehouse:
-      - Design a schema for the data warehouse
-      - Create the schama and load the data into fact and dimension tables
-      - Automate the daily incremental data insertion into th data warehouse
-      - Create CUBES and ROLLUPS to make the reporting easier
-
-   - Create a BI dashboard:
-      - Create a barchart of quarterly sales of cell phones 
-      - Craete a piechart of sales of electronic goods by category
-      - Create a line chart of total sales per month for a given year
-   - create ETL Data Pipelines to feed the Data Warehouse on a regular basis with new data:
-      - Extract data from an OLTP database into CSV format
-      - Transform the OLTP data to suit the data warehouse schema
-      - Load the transformed data into the data warehouse
-      - Verify that the data is loaded properly.
-
 ## Tools
 - MySQL: OLTP database
+- phpMyAdmin 
 - PostgreSQL: Staging - Data warehouse
 - IBM Db2 on Cloud: Production Data warehouse
 - IBM Cognos Analytics: Business Intelligence Dashbording tool
 - Bash
 - Cron
 - PgModeler
+
+## Key Tasks
+
+Here are key tasks with a short description. For more details informations and the codes to perform each of them, refers to the links bellow corrsponding to each task.
+
+### [Task 1](./tasks/task1.md): Set up a transactional database:
+- Design the OLTP database
+- Populate the OLTP database with the provided data
+- Create an index to accelerate data retrieval
+- Create a data backup script
+
+Here is the schema of the `sales_data` table in the `sales` database
+
+| Field        | Description                             |
+|--------------|-----------------------------------------|
+| product_id   | The ID of the product (Primary key)      |
+| customer_id  | The ID of the customer (Foreign key)     |
+| price        | The price of the product   |
+| quantity     | The quantity of products sold            |
+| timestamp    | The timestamp of the transaction         |
+
+### Task 2: Build the data warehouse:
+- Design a schema for the data warehouse
+- Create the schama and load the data into fact and dimension tables
+- Automate the daily incremental data insertion into th data warehouse
+- Create CUBES and ROLLUPS to make the reporting easier
+
+### Task 3
+- Create a BI dashboard:
+- Create a barchart of quarterly sales of cell phones 
+- Craete a piechart of sales of electronic goods by category
+- Create a line chart of total sales per month for a given year
+
+### Task 4
+- create ETL Data Pipelines to feed the Data Warehouse on a regular basis with new data:
+- Extract data from an OLTP database into CSV format
+- Transform the OLTP data to suit the data warehouse schema
+- Load the transformed data into the data warehouse
+- Verify that the data is loaded properly.
+
