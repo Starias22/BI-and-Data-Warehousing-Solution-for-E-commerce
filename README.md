@@ -38,7 +38,7 @@ An ETL process using a shell script is set up to extract new transactional data 
 
 Here is the architecture of the data platform
 
-![alt text](./resources/architecure.png)
+![alt text](./resources/images/architecure.png)
 
 ## Tools
 - MySQL: OLTP database
