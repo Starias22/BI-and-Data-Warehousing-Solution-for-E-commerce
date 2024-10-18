@@ -45,7 +45,7 @@ Here is the architecture of the data platform
 These are the key tasks:
    - Set up a transactional database:
       - Design the OLTP database
-      - Populate the OLTP database woth the provided data
+      - Populate the OLTP database with the provided data
       - Load the daily incremental data intot the data warehouse
    - Build the data warehouse:
       - Design a schema for the data warehouse
