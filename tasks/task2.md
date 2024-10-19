@@ -6,7 +6,7 @@ This consists to use the provided sample data to design a star schema for the da
 
 The design has been created using PgAdmin.
 
-![alt text](./../resources/sample_data.png)
+![alt text](./../resources/images/sample_data.png)
 
 ### 1. Design the dimension table softcartDimDate
 
@@ -22,7 +22,7 @@ The design has been created using PgAdmin.
 | quartername   | The name of the quarter (Q1, Q2, Q3 or Q4) |
 | year   | The year (2022, 2023 for examples) |
 
-![alt text](./../resources/softcartDimDate.png)
+![alt text](./../resources/images/softcartDimDate.png)
 
 ### 2. Design the dimension table softcartDimCategory
 
@@ -31,7 +31,7 @@ The design has been created using PgAdmin.
 | categoryid   | The id of the category (Primary key) |
 | category   | The category (Movie, Ebook, Song for examples) |
 
-![alt text](./../resources/softcartDimCategory.png)
+![alt text](./../resources/images/softcartDimCategory.png)
 
 ### 3. Design the dimension table softcartDimItem
 
@@ -49,7 +49,7 @@ The design has been created using PgAdmin.
 | countryid   | The id of the country (Primary key) |
 | country  | The name of the country (USA, Canada, Japan, Cyprus for examples) |
 
-![alt text](./../resources/softcartDimCountry.png)
+![alt text](./../resources/images/softcartDimCountry.png)
 
 ### 5. Design the fact table softcartFactSales
 
@@ -63,15 +63,15 @@ The design has been created using PgAdmin.
 | countryid   | The id of the country (Foreign key) |
 
 
-![alt text](./../resources/softcartFactSales.png)
+![alt text](./../resources/images/softcartFactSales.png)
 
 ### 6. Design the relationships
 
-![alt text](./../resources/softcartRelationships.png)
+![alt text](./../resources/images/softcartRelationships.png)
 
 ### 7. Create the schema
 
-![alt text](./../resources/createschema.png)
+![alt text](./../resources/images/createschema.png)
 
 ## Data Warehouse Reporting
 
@@ -98,7 +98,7 @@ DELIMITER ',' CSV HEADER;
 ```sql
 SELECT * FROM "DimDate" LIMIT 5;
 ```
-![alt text](./../resources/DimDate.png)
+![alt text](./../resources/images/DimDate.png)
 
 
 #### 2. Load data into the dimension table `DimCategory`
@@ -121,7 +121,7 @@ DELIMITER ',' CSV HEADER;
 
 
 
-![alt text](./../resources/DimCategory.png)
+![alt text](./../resources/images/DimCategory.png)
 
 
 #### 3. Load data into the dimension table `DimCountry`
@@ -146,7 +146,7 @@ DELIMITER ',' CSV HEADER;
 SELECT * FROM "DimCountry" LIMIT 5;
 ```
 
-![alt text](./../resources/DimCountry.png)
+![alt text](./../resources/images/DimCountry.png)
 
 
 #### 4. Load data into the fact table `FactSales`
@@ -171,7 +171,7 @@ DELIMITER ',' CSV HEADER;
 ```sql
 SELECT * FROM "FactSales" LIMIT 5;
 ```
-![alt text](./../resources/FactSales.png)
+![alt text](./../resources/images/FactSales.png)
 
 ### Queries for data analytics
 
@@ -190,7 +190,7 @@ GROUP BY
 GROUPING SETS(country, category);
 ```
 
-![alt text](./../resources/groupingsets.png)
+![alt text](./../resources/images/images/groupingsets.png)
 
 #### 2. Create a ROLLUP Query
 
@@ -207,7 +207,7 @@ GROUP BY
 ROLLUP(year, country);
 ```
 
-![alt text](./../resources/rollup.png)
+![alt text](./../resources/images/rollup.png)
 
 #### 3. Create a CUBE Query
 
@@ -224,7 +224,7 @@ GROUP BY
 CUBE(year, country);
 ```
 
-![alt text](./../resources/cube.png)
+![alt text](./../resources/images/cube.png)
 
 #### 4. Create an MQT
 
@@ -242,4 +242,4 @@ GROUP BY country;
 SELECT * FROM total_sales_per_country;
 ```
 
-![alt text](./../resources/mtq.png)
+![alt text](./../resources/images/mtq.png)

@@ -77,18 +77,24 @@ Here is the schema of the `sales_data` table in the `sales` database
 - Create CUBES and ROLLUP to make the reporting easier
 
 Here is the design of the data warehouse
-![Data Warehouse Design](./resources/softcartRelationships.png)
+![Data Warehouse Design](./resources/images/softcartRelationships.png)
 
-### Task 3
-- Create a BI dashboard:
+### [Task 3](./tasks/task3.md): Create a BI dashboard:
 - Create a barchart of quarterly sales of cell phones 
 - Craete a piechart of sales of electronic goods by category
 - Create a line chart of total sales per month for a given year
 
-### Task 4
-- create ETL Data Pipelines to feed the Data Warehouse on a regular basis with new data:
-- Extract data from an OLTP database into CSV format
-- Transform the OLTP data to suit the data warehouse schema
-- Load the transformed data into the data warehouse
-- Verify that the data is loaded properly.
+Here are the three charts created within the dashboard.
+![Bar Chart](./resources/images/barchart.png)
+![Pie Chart](./resources/images/piechart.png)
+![Line Chart](./resources/images/linechart.png)
 
+### [Task 4](./tasks/task4.md) Create ETL Data Pipelines 
+
+- create ETL Data Pipelines to feed the Data Warehouse on a regular basis with new data:
+   - Extract data from an OLTP database into CSV format
+   - Transform the OLTP data to suit the data warehouse schema
+   - Load the transformed data into the data warehouse
+   - Verify that the data is loaded properly.
+
+Find the complete final scrit [here](./resources/ETL.sh)
