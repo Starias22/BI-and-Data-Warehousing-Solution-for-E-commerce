@@ -22,6 +22,8 @@ The design has been created using PgAdmin.
 | quartername   | The name of the quarter (Q1, Q2, Q3 or Q4) |
 | year   | The year (2022, 2023 for examples) |
 
+
+
 ![alt text](./../resources/images/softcartDimDate.png)
 
 ### 2. Design the dimension table softcartDimCategory
@@ -40,7 +42,7 @@ The design has been created using PgAdmin.
 | itemid   | The id of the item (Primary key) |
 | item   | The item (The Matrix, The Alchemist, Baby Shark, THe Lord of the Rings for examples) |
 
-![alt text](./../resources/softcartDimItem.png)
+![alt text](./../resources/images/softcartDimItem.png)
 
 ### 4. Design the dimension table softcartDimCountry
 
@@ -190,7 +192,7 @@ GROUP BY
 GROUPING SETS(country, category);
 ```
 
-![alt text](./../resources/images/images/groupingsets.png)
+![alt text](./../resources/images/groupingsets.png)
 
 #### 2. Create a ROLLUP Query
 
