@@ -286,9 +286,15 @@ Remove the public for ach table creation statement
 Create an instance of Db 2 in IBM Cloud
 
 Select the instance
+
 Click on RUN SQL
+
 Click on the PLus button, with the label Add new script
+
 Choose FROM file
+
 Select the file  CREATE-SCRIPT.sql
+
 Click RUN all
+
 Select Tables and you'll see that the four tables are created
