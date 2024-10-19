@@ -4,7 +4,7 @@
 
 ### Schema of the `sales_data` table
 
-![Sample Data](./../resources/images/sample_data.png).
+![Sample Data](./../resources/images/sales_sample_data.png).
 
 From the sample data above we can deduce a schema for the `sales_data` table. 
 
