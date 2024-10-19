@@ -98,6 +98,18 @@ There are two opions for reporting:either using PostgreSQL or using IBM Db2
 
 ### Data Warehouse Reporting using PostgreSQL
 
+- First of all download this script either [manually](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nm75oOK5n7AGME1F7_OIQg/CREATE-SCRIPT.sql) or using wget.
+
+```sh
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nm75oOK5n7AGME1F7_OIQg/CREATE-SCRIPT.sql
+```
+
+- Run th script to get the dimension tables and the fact table created.
+
+```sql
+\include CREATE-SCRIPT.sql 
+```
+
 #### Loading Data
 
 ##### 1. Load data into the dimension table `DimDate`
@@ -269,3 +281,14 @@ SELECT * FROM total_sales_per_country;
 
 
 ### Data Warehouse Reporting using IBM Db2
+
+Remove the public for ach table creation statement
+Create an instance of Db 2 in IBM Cloud
+
+Select the instance
+Click on RUN SQL
+Click on the PLus button, with the label Add new script
+Choose FROM file
+Select the file  CREATE-SCRIPT.sql
+Click RUN all
+Select Tables and you'll see that the four tables are created
