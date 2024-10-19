@@ -8,6 +8,11 @@ The design has been created using PgAdmin.
 
 ![alt text](./../resources/images/sample_data.png)
 
+### 0. Initialization
+- Go to PgAdmin
+- Create a database named `softcart`
+- Perform the following: softcart->ERD for Database to create a database design file.
+
 ### 1. Design the dimension table softcartDimDate
 
 | Field | Description |
@@ -22,7 +27,7 @@ The design has been created using PgAdmin.
 | quartername   | The name of the quarter (Q1, Q2, Q3 or Q4) |
 | year   | The year (2022, 2023 for examples) |
 
-
+In PgAdmin, create the dimension table softcartDimDate
 
 ![alt text](./../resources/images/softcartDimDate.png)
 
@@ -33,6 +38,8 @@ The design has been created using PgAdmin.
 | categoryid   | The id of the category (Primary key) |
 | category   | The category (Movie, Ebook, Song for examples) |
 
+- In PgAdmin, create the dimension table softcartDimCategory
+
 ![alt text](./../resources/images/softcartDimCategory.png)
 
 ### 3. Design the dimension table softcartDimItem
@@ -42,6 +49,9 @@ The design has been created using PgAdmin.
 | itemid   | The id of the item (Primary key) |
 | item   | The item (The Matrix, The Alchemist, Baby Shark, THe Lord of the Rings for examples) |
 
+- In PgAdmin, create the dimension table softcartDimItem
+
+
 ![alt text](./../resources/images/softcartDimItem.png)
 
 ### 4. Design the dimension table softcartDimCountry
@@ -50,6 +60,8 @@ The design has been created using PgAdmin.
 |----------|----------|
 | countryid   | The id of the country (Primary key) |
 | country  | The name of the country (USA, Canada, Japan, Cyprus for examples) |
+
+- In PgAdmin, create the dimension table softcartDimCountry
 
 ![alt text](./../resources/images/softcartDimCountry.png)
 
@@ -64,22 +76,31 @@ The design has been created using PgAdmin.
 | itemid   | The id of the item (Foreign key) |
 | countryid   | The id of the country (Foreign key) |
 
+- In PgAdmin, create the fact table softcartFactSales
+
 
 ![alt text](./../resources/images/softcartFactSales.png)
 
 ### 6. Design the relationships
 
+- In PgAdmin, create the relations between of the dimensions tables with the fact table.
+
 ![alt text](./../resources/images/softcartRelationships.png)
 
 ### 7. Create the schema
 
+In PgAdmin, use softcart->CREATE Script->Execute Script to run the query for the creation of the schema. 
 ![alt text](./../resources/images/createschema.png)
 
 ## Data Warehouse Reporting
 
-### Loading Data
+There are two opions for reporting:either using PostgreSQL or using IBM Db2
 
-#### 1. Load data into the dimension table `DimDate`
+### Data Warehouse Reporting using PostgreSQL
+
+#### Loading Data
+
+##### 1. Load data into the dimension table `DimDate`
 
 - Download the data either [manually](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/datawarehousing/data/DimDate.csv) or using wget.
 
@@ -103,7 +124,7 @@ SELECT * FROM "DimDate" LIMIT 5;
 ![alt text](./../resources/images/DimDate.png)
 
 
-#### 2. Load data into the dimension table `DimCategory`
+##### 2. Load data into the dimension table `DimCategory`
 
 - Download the data either [manually](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/datawarehousing/DimCategory.csv) or using wget
 
@@ -126,7 +147,7 @@ DELIMITER ',' CSV HEADER;
 ![alt text](./../resources/images/DimCategory.png)
 
 
-#### 3. Load data into the dimension table `DimCountry`
+##### 3. Load data into the dimension table `DimCountry`
 
 - Download the data either [manually](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/datawarehousing/DimCountry.csv) or using wget
 
@@ -151,7 +172,7 @@ SELECT * FROM "DimCountry" LIMIT 5;
 ![alt text](./../resources/images/DimCountry.png)
 
 
-#### 4. Load data into the fact table `FactSales`
+##### 4. Load data into the fact table `FactSales`
 
 - Download the data either [manually](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/datawarehousing/FactSales.csv) or using wget
 
@@ -175,9 +196,9 @@ SELECT * FROM "FactSales" LIMIT 5;
 ```
 ![alt text](./../resources/images/FactSales.png)
 
-### Queries for data analytics
+#### Queries for data analytics
 
-#### 1. Create a GROUPING SETS Query
+##### 1. Create a GROUPING SETS Query
 
 Create a grouping sets query using the columns country, category, totalsales.
 
@@ -194,7 +215,7 @@ GROUPING SETS(country, category);
 
 ![alt text](./../resources/images/groupingsets.png)
 
-#### 2. Create a ROLLUP Query
+##### 2. Create a ROLLUP Query
 
 Create a rollup query using the columns year, country, and totalsales.
 
@@ -211,7 +232,7 @@ ROLLUP(year, country);
 
 ![alt text](./../resources/images/rollup.png)
 
-#### 3. Create a CUBE Query
+##### 3. Create a CUBE Query
 
 Create a cube query using the columns year, country, and average sales.
 
@@ -228,7 +249,7 @@ CUBE(year, country);
 
 ![alt text](./../resources/images/cube.png)
 
-#### 4. Create an MQT
+##### 4. Create an MQT
 
 Create an MQT named total_sales_per_country that has the columns country and total_sales.
 
@@ -245,3 +266,6 @@ SELECT * FROM total_sales_per_country;
 ```
 
 ![alt text](./../resources/images/mtq.png)
+
+
+### Data Warehouse Reporting using IBM Db2
