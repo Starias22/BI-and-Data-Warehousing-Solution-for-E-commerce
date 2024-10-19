@@ -4,7 +4,9 @@
 
 ### Schema of the `sales_data` table
 
-Here is the schema of the `sales_data` table in the `sales` database
+![Sample Data](./../resources/images/sample_data.png)
+From the sample data above we can deduce a schema for the `sales_data` table. 
+
 
 | Field        | Description                             |
 |--------------|-----------------------------------------|
@@ -16,9 +18,13 @@ Here is the schema of the `sales_data` table in the `sales` database
 
 ### Create the `sales`database 
 
+Get connected to MySQL CLI and create the `sales`database.
+
 ```sql
 CREATE DATABASE sales;
 ```
+
+![alt text](./../resources/images/create_database.png)
 
 ### Create the `sales_data` table
 
@@ -49,13 +55,23 @@ SHOW TABLES;
 
 ### Import data
 
-Import data into the table using PhpMyAdmin
+- Download on your local computer the file `oltpdata.csv` from [here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv). It contains sales transactions.
+
+    You can downlod the data either manually or using wget
+
+```sh
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv
+```
+
+- Go to phpMyAdmin, select the `sales` database and the `sales_data` table
+- Import the data from `oltpdata.csv` into `sales_data` table.
+
 
 ![alt text](./../resources/images/importdata.png)
 
 
 ### Check the data import
-Run the following command to get the number of rows inserted into the table.
+Go back to MySQL CLI, to the sales database and  run the following command to get the number of rows inserted into the table.
 
 ```sql
 SELECT COUNT(*) FROM sales_data;
@@ -86,17 +102,20 @@ SHOW INDEXES FROM sales data;
 ## Backup
 
 ### Create the backup script
-
-Create a bash script to backup the `sales_data` of the database as a SQL file
-
+- Create a bash script file named datadump.sh
+```
+touch datadump.sh
+```
+- Write into the file a script to backup the `sales_data` of the database as a SQL file.
+- You may customize the parameters(host, user, password) if needed
 ```sh
 #!/bin/bash
-
 mysqldump --host=172.21.68.113 --port=3306 --user=root \
 --password=0E2CGaCGBfydvGa6kCiAZBWu sales sales_data > sales_data.sql
 
 echo "Data exported successfully to sales_data.sql."
 ```
+- Save the file
 
 ### Make the backup file executable for the curent usable
 
@@ -109,5 +128,12 @@ sudo chmod u+x datadump.sh
 ```sh
 ./datadump.sh
 ```
+
+### Check the backup file
+
+```sh
+cat sales_data.sql
+```
+
 
 ![alt text](./../resources/images/exportdata.png)

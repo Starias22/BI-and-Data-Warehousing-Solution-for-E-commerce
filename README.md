@@ -1,11 +1,12 @@
 # BI-and-Data-Warehousing-Solution-for-E-commerce
 ## Table of Contents
 1. [Summary](#summary)
-2. [Key tasks](key-tasks)
+2. [Process Description](#process-description)
 3. [Architecture](#architecture)
-4. [Tools](#tools)
-5. [Database Design](#database-design)
-6. [Installation](#installation)
+4. [Key tasks](key-tasks)
+5. [Tools](#tools)
+6. [Database Design](#database-design)
+7. [Installation](#installation)
    - [Prerequisites](#prerequisites)
    - [Setup Steps](#setup-steps)
 7. [Usage](#usage)
@@ -19,7 +20,7 @@ is a project inspired by the [Course 9](https://github.com/Starias22/IBM-Data-Wa
 the [IBM Data Warehouse Engineer Professional Certificate](https://github.com/Starias22/IBM-Data-Warehouse-Engineer-Professional-Certificate/), titled Data Warehousing Capstone Project. It consists to build a data platform for retails analytics.
 
 
-## Process Description
+## Scenario
 SoftCart's online presence is primarily through its website, which customers access using a variety of devices like laptops, mobiles and tablets.
 
 All the catalog data of the products and transactional data like inventory and sales are stored in the MySQL database server.
