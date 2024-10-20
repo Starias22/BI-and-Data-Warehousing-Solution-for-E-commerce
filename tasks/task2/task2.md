@@ -4,7 +4,7 @@
 [Data Warehouse Design and Setup](./design_setup.md)
 ## Data Warehouse Reporting
 
-There are two opions for reporting: either using PostgreSQL or using IBM Db2
+There are two options for reporting: either using PostgreSQL or using IBM Db2
 
 ### Option 1: Data Warehouse Reporting using PostgreSQL
 
