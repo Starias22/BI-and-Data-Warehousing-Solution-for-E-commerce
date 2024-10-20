@@ -1,15 +1,10 @@
 # Data Warehouse Reporting using PostgreSQL
 
-- First of all download this script either [manually](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nm75oOK5n7AGME1F7_OIQg/CREATE-SCRIPT.sql) or using wget.
 
-```sh
-wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nm75oOK5n7AGME1F7_OIQg/CREATE-SCRIPT.sql
-```
-
-- Run th script to get the dimension tables and the fact table created.
+- Run [this script](./../../resources/create_tables.sql) to get the dimension tables and the fact table created.
 
 ```sql
-\include CREATE-SCRIPT.sql 
+\include create_script.sql 
 ```
 
 ## Loading Data
