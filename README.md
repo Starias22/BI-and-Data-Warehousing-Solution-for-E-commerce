@@ -72,7 +72,7 @@ Here is the schema of the `sales_data` table in the `sales` database
 | quantity     | The quantity of products sold            |
 | timestamp    | The timestamp of the transaction         |
 
-### [Task 2](./tasks/task2.md): Build the data warehouse:
+### [Task 2](./tasks/task2/task2.md): Build the data warehouse:
 - Design a schema for the data warehouse
 - Create the schema and load the data into fact and dimension tables
 - Automate the daily incremental data insertion into the data warehouse
