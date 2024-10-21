@@ -86,10 +86,9 @@ Here is the design of the data warehouse
 - Craete a piechart of sales of electronic goods by category
 - Create a line chart of total sales per month for a given year
 
-Here are the three charts created within the dashboard.
-![Bar Chart](./resources/images/barchart.png)
-![Pie Chart](./resources/images/piechart.png)
-![Line Chart](./resources/images/linechart.png)
+Here is a screenshoot of the dashboard
+
+![alt text](./resources/images/dashboard.png)
 
 ### [Task 4](./tasks/task4.md) Create ETL Data Pipelines 
 
