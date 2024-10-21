@@ -42,7 +42,7 @@ Here is the architecture of the data platform
 ![alt text](./resources/images/architecure.png)
 
 ## Tools
-- **IBM Cloud**: The cloud environment hosting the solution.
+<!-- - **IBM Cloud**: The cloud environment hosting the solution. -->
 - **MySQL**: Used as the OLTP (Online Transaction Processing) database to store transactional sales data.
 - **phpMyAdmin**: A web-based tool for managing MySQL databases, used for database administration and visualization.
 - **PgAdmin**: A web-based administration tool for managing PostgreSQL databases, used for database design and querying.
