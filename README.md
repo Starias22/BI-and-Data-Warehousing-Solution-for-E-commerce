@@ -82,10 +82,11 @@ Here is the design of the data warehouse
 ![Data Warehouse Design](./resources/images/softcartRelationships.png)
 
 ### [Task 3](./tasks/task3.md): Create a BI dashboard:
-
-- Create a line chart of total sales per month over all years
-- Create a piechart of sales by category
-- Create a barchart of quarterly sales of books 
+- Create a dashboard with three charts
+   - Create a line chart of total sales per month over all years
+   - Create a piechart of sales by category
+   - Create a barchart of quarterly sales of books
+- Set a timer of 24 hours on every chart to make the dashboard updated every day by querying the data warehouse for the latest data
 
 Here is a screenshoot of the dashboard
 
