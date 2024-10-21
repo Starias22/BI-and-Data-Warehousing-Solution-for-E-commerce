@@ -82,9 +82,10 @@ Here is the design of the data warehouse
 ![Data Warehouse Design](./resources/images/softcartRelationships.png)
 
 ### [Task 3](./tasks/task3.md): Create a BI dashboard:
-- Create a barchart of quarterly sales of cell phones 
-- Craete a piechart of sales of electronic goods by category
-- Create a line chart of total sales per month for a given year
+
+- Create a line chart of total sales per month over all years
+- Create a piechart of sales by category
+- Create a barchart of quarterly sales of books 
 
 Here is a screenshoot of the dashboard
 
