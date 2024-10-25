@@ -106,7 +106,7 @@ SELECT COUNT(*) FROM "FactSales";
 
 The output should look like the following
 
-![alt text](image.png)
+![alt text](./../../resources/images/data_load.png)
 
 ## Queries for data analytics
 
