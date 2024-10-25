@@ -11,7 +11,7 @@ The design has been created using PgAdmin.
 - Create a database named `softcart`
 - Perform the following: softcart->ERD for Database to create a database design file.
 
-###1. Design the dimension table softcartDimDate
+### 1. Design the dimension table softcartDimDate
 
 | Field | Description |
 |----------|----------|

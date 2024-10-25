@@ -14,26 +14,27 @@
 
 To create credentials for your instance, select Service credential-> New credential -> Add
 
-## Create the schama
+## Create the schema
 
-Download the SQL script for creating the schema of the production data warehouse. The SQL script can be found here [](./../../resources/create_tables.sql)
+The SQL script for creating the schema of the production data warehouse can be found [here](./../../resources/create_tables.sql).
 
-Select Manage-> Go to UI
-Click on RUN SQL
+In your IBM Db2 instance
+- Select Manage-> Go to UI
+- Click on RUN SQL
 
-Click on the Plus button, with the label Add new script
+- Click on the Plus button, with the label Add new script
 
-Choose FROM file
+- Choose FROM file
 
-Select the tables creation script you/ve just downloaded.
+- Select the tables creation script you/ve just downloaded.
 
-Click RUN all
+- Click RUN all
 
 You will get an output looking like the following.
 
 ![alt text](./../../resources/images/create_tables.png)
 
-Click on Reload icon, with label Reload objects
+- Click on Reload icon, with label Reload objects
 Then select the schama and then Tables and you'll see that the four tables have been created within a schema (WYB81330 in my case)
 
 ![alt text](./../../resources/tables_list.png)
@@ -43,16 +44,69 @@ Then select the schama and then Tables and you'll see that the four tables have 
 To load initial data into the data warehouse, we will use ibm_db, a python DB API to interact with DB2 on Cloud
 
 ### Set up a virtual environment
+We will create a python virtual environment. This environment will help us load the data from our local system into our IBM Db2 instance, using a python API
+
+- Create the environment
+
+```sh
+python3 -m venv ibm_db2_env
+```
+
+- Activate the environment
+
+```sh
+source ibm_db2_env/bin/activate
+```
+- Install Pandas and IBM Db2 API
+
+```sh
+pip install pandas ibm_db
+```
+
+- Deactivate the environment
+
+```sh
+deactivate
+```
 
 ### Copy credentials
 
+Access IBM Db2 instance
+
+On the main page, click Service Credentials and click the copy icon the copy to the clipboard the credentials you've just created. Then paste it into a text file.
+
 ### Create the python script to load the data into the production data warehouse
 
-and check
+The python script to load the dat can be found here [here](./../../load_data_template.py)
 
+Make a copy of that the script
+```
+cp load_data_template.py load_data.py
+```
+- Update the script by using the informations in the credentions you've just copied. THe following infirmations need to be updated:
+    - DATABASE: the name of the database
+    - HOSTNAME: the database server name
+    - PORT: The port on which the database server is listenning
+    - UID: The databas user id
+    - PWD: The password
 
+### Run the script
 
+Run the python script to get the data loaded into IBM Db2 on cloud. It should not take more than 5 minutes.
 
+```sh
+python3 python3 load_data.py
+```
+
+Go to your Db2 instance to check the data was realy loaded: Click SQL and paste the following script and click Run all
+
+```sql
+SELECT COUNT(*) FROM "FactSales";
+```
+
+The output should look like the following
+
+![alt text](image.png)
 
 ## Queries for data analytics
 

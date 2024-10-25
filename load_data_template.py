@@ -164,19 +164,19 @@ try:
     print("Connected to the database")
 
     print("Loading Data into DimCategory")
-    insert_dim_category(conn, 'DimCategory.csv')  # CSV for DimCategory
+    insert_dim_category(conn, 'data/DimCategory.csv')  # CSV for DimCategory
 
     print("Loading Data into DimDate")
-    insert_dim_date(conn, 'DimDate.csv')  # CSV for DimDate
+    insert_dim_date(conn, 'data/DimDate.csv')  # CSV for DimDate
 
     
     
     
     print("Loading Data into DimCountry")
-    insert_dim_country(conn, 'DimCountry.csv')  # CSV for DimCountry
+    insert_dim_country(conn, 'data/DimCountry.csv')  # CSV for DimCountry
     
     print("Loading Data into FactSales")
-    insert_fact_sales(conn, 'FactSales.csv')  # CSV for FactSales
+    insert_fact_sales(conn, 'data/FactSales.csv')  # CSV for FactSales
         
     # Close the connection
     ibm_db.close(conn)
